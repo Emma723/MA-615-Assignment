@@ -62,7 +62,7 @@ knitr::kable(table)
 ![book](/Users/qixuanzhang/Downloads/book.jpg)
 ```{r}
 cover_url = 'https://github.com/Emma723/MA-615-Assignment/blob/master/book.jpg'
-if (!file.exists(cover_file <- 'cover2.jpg'))
+if (!file.exists(cover_file <- 'book.jpg'))
   download.file(cover_url, cover_file, mode = 'wb')
 knitr::include_graphics(if (identical(knitr:::pandoc_to(), 'html')) cover_url else cover_file)
 
