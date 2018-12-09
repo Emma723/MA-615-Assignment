@@ -1,0 +1,1294 @@
+\documentclass[]{article}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={615 for text mining},
+            pdfauthor={Qixuan Zhang,Tingrui Huang},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{0}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{615 for text mining}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{Qixuan Zhang,Tingrui Huang}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{11/4/2018}
+
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Read text file}
+\KeywordTok{library}\NormalTok{(tidytext)}
+\KeywordTok{library}\NormalTok{(readr)}
+\KeywordTok{library}\NormalTok{(tidytext)}
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching packages ---------------------------------- tidyverse 1.2.1 --
+\end{verbatim}
+
+\begin{verbatim}
+## √ ggplot2 3.0.0     √ purrr   0.2.5
+## √ tibble  1.4.2     √ dplyr   0.7.6
+## √ tidyr   0.8.1     √ stringr 1.3.1
+## √ ggplot2 3.0.0     √ forcats 0.3.0
+\end{verbatim}
+
+\begin{verbatim}
+## -- Conflicts ------------------------------------- tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyr)}
+\KeywordTok{library}\NormalTok{(scales)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'scales'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     discard
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:readr':
+## 
+##     col_factor
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(wordcloud)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: RColorBrewer
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(reshape2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'reshape2'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:tidyr':
+## 
+##     smiths
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(igraph)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Attaching package: 'igraph'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:dplyr':
+## 
+##     as_data_frame, groups, union
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:purrr':
+## 
+##     compose, simplify
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:tidyr':
+## 
+##     crossing
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:tibble':
+## 
+##     as_data_frame
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     decompose, spectrum
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:base':
+## 
+##     union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggraph)}
+\KeywordTok{library}\NormalTok{(rvest)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Loading required package: xml2
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'rvest'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:purrr':
+## 
+##     pluck
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:readr':
+## 
+##     guess_encoding
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{url1 <-}\StringTok{ "https://correlaid.org/blog/posts/understand-p-values"}
+\NormalTok{content <-}\StringTok{ }\KeywordTok{read_html}\NormalTok{(url1)}
+\NormalTok{html1<-}\StringTok{ }\KeywordTok{html_nodes}\NormalTok{(content,}\StringTok{"div.post-content"}\NormalTok{) %>%}\StringTok{ }\NormalTok{html_text}
+\NormalTok{text <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(html1,}\DataTypeTok{side =} \StringTok{"both"}\NormalTok{)}
+\NormalTok{text1 <-}\StringTok{ }\KeywordTok{as.tibble}\NormalTok{(text)}
+\KeywordTok{colnames}\NormalTok{(text1) <-}\StringTok{ "text"} 
+\NormalTok{text1[,}\StringTok{"text"}\NormalTok{]<-}\KeywordTok{gsub}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{,}\StringTok{""}\NormalTok{,text1[,}\StringTok{"text"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Chapter1 The tidy text
+format}\label{chapter1-the-tidy-text-format}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#unnest_token function}
+\NormalTok{text1_1<-text1 %>%}
+\StringTok{  }\KeywordTok{unnest_tokens}\NormalTok{(word, text)}
+
+\KeywordTok{data}\NormalTok{(stop_words)}
+\NormalTok{text1_11<-}\StringTok{ }\NormalTok{text1_1 %>%}
+\StringTok{  }\KeywordTok{anti_join}\NormalTok{(stop_words,}\DataTypeTok{by=}\StringTok{"word"}\NormalTok{)}
+\CommentTok{# Plot the tidy blog}
+\CommentTok{#plot the frenquecy of blog1}
+\NormalTok{text1_11%>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word,}\DataTypeTok{sort=}\OtherTok{TRUE}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(n >}\DecValTok{4}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{word =} \KeywordTok{reorder}\NormalTok{(word, n)) %>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(word, n)) +}
+\StringTok{  }\KeywordTok{geom_col}\NormalTok{() +}
+\StringTok{  }\KeywordTok{xlab}\NormalTok{(}\OtherTok{NULL}\NormalTok{) +}
+\StringTok{  }\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Compare the frenquency of blog1 and blog2}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Chapter2 Sentiments words}\label{chapter2-sentiments-words}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Sentiments analysis of afinn, bing,nrc}
+\KeywordTok{library}\NormalTok{(tidytext)}
+\NormalTok{sentiments}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 27,314 x 4
+##    word        sentiment lexicon score
+##    <chr>       <chr>     <chr>   <int>
+##  1 abacus      trust     nrc        NA
+##  2 abandon     fear      nrc        NA
+##  3 abandon     negative  nrc        NA
+##  4 abandon     sadness   nrc        NA
+##  5 abandoned   anger     nrc        NA
+##  6 abandoned   fear      nrc        NA
+##  7 abandoned   negative  nrc        NA
+##  8 abandoned   sadness   nrc        NA
+##  9 abandonment anger     nrc        NA
+## 10 abandonment fear      nrc        NA
+## # ... with 27,304 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{afinn <-}\StringTok{ }\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"afinn"}\NormalTok{)}
+\NormalTok{bing <-}\StringTok{ }\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"bing"}\NormalTok{)}
+\NormalTok{nrc <-}\StringTok{ }\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"nrc"}\NormalTok{)}
+
+\NormalTok{afinn_analysis <-}\StringTok{ }\NormalTok{text1_11 %>%}
+\StringTok{  }\KeywordTok{inner_join}\NormalTok{(}\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"afinn"}\NormalTok{), }\DataTypeTok{by =} \StringTok{"word"}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(word) %>%}
+\StringTok{  }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{occurences =} \KeywordTok{n}\NormalTok{(),}
+            \DataTypeTok{afinn_analysis =} \KeywordTok{sum}\NormalTok{(score))}
+\CommentTok{#ggplotafinn_analysis}
+\NormalTok{afinn_analysis %>%}
+\StringTok{  }\KeywordTok{top_n}\NormalTok{(}\DecValTok{25}\NormalTok{, }\KeywordTok{abs}\NormalTok{(afinn_analysis)) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{word =} \KeywordTok{reorder}\NormalTok{(word, afinn_analysis)) %>%}
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(word, afinn_analysis, }\DataTypeTok{fill =} \NormalTok{afinn_analysis >}\StringTok{ }\DecValTok{0}\NormalTok{)) +}
+\StringTok{  }\KeywordTok{geom_col}\NormalTok{(}\DataTypeTok{show.legend =} \OtherTok{FALSE}\NormalTok{) +}
+\StringTok{  }\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-3-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sentitext <-}\StringTok{  }\NormalTok{text1_11 %>%}
+\StringTok{  }\KeywordTok{unnest_tokens}\NormalTok{(sentence, text, }\DataTypeTok{token =} \StringTok{"sentences"}\NormalTok{) %>%}\StringTok{ }
+\StringTok{  }\KeywordTok{group_by}\NormalTok{(word) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{linenumber =} \KeywordTok{row_number}\NormalTok{()) %>%}
+\StringTok{  }\KeywordTok{ungroup}\NormalTok{() %>%}
+\StringTok{  }\KeywordTok{unnest_tokens}\NormalTok{(word, sentence) %>%}
+\StringTok{  }\KeywordTok{anti_join}\NormalTok{(stop_words, }\DataTypeTok{by =} \StringTok{"word"}\NormalTok{)}
+\CommentTok{#Caculate the sentiment word for p-value article}
+\NormalTok{bing_analysis <-}\StringTok{ }\NormalTok{sentitext %>%}
+\StringTok{  }\KeywordTok{inner_join}\NormalTok{(bing, }\DataTypeTok{by =} \StringTok{"word"}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(word, }\DataTypeTok{index =} \NormalTok{linenumber , sentiment)%>%}
+\StringTok{  }\KeywordTok{spread}\NormalTok{(sentiment, n, }\DataTypeTok{fill =} \DecValTok{0}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{sentiment =} \NormalTok{positive -}\StringTok{ }\NormalTok{negative)}
+
+  \KeywordTok{ggplot}\NormalTok{(bing_analysis,}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x=}\NormalTok{word,}\DataTypeTok{y=}\NormalTok{index,}\DataTypeTok{fill =} \NormalTok{sentiment)) +}
+\StringTok{  }\KeywordTok{geom_col}\NormalTok{(}\DataTypeTok{show.legend =} \OtherTok{FALSE}\NormalTok{) +}
+\StringTok{  }\KeywordTok{facet_wrap}\NormalTok{(~sentiment, }\DataTypeTok{scales =} \StringTok{"free_y"}\NormalTok{) +}
+\StringTok{  }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{y =} \StringTok{"Sentiment"}\NormalTok{,}
+       \DataTypeTok{x =} \OtherTok{NULL}\NormalTok{) +}
+\StringTok{  }\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-3-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Compare}
+
+  
+  
+  
+\CommentTok{# Wordcloud}
+\KeywordTok{library}\NormalTok{(wordcloud)}
+\NormalTok{text1_1 %>%}
+\StringTok{  }\KeywordTok{anti_join}\NormalTok{(stop_words,}\DataTypeTok{by=}\StringTok{"word"}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(word) %>%}
+\StringTok{  }\KeywordTok{with}\NormalTok{(}\KeywordTok{wordcloud}\NormalTok{(word, n, }\DataTypeTok{max.words =} \DecValTok{100}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in strwidth(words[i], cex = size[i], ...): conversion failure on
+## 'let’s' in 'mbcsToSbcs': dot substituted for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in strwidth(words[i], cex = size[i], ...): conversion failure on
+## 'let’s' in 'mbcsToSbcs': dot substituted for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in strwidth(words[i], cex = size[i], ...): conversion failure on
+## 'let’s' in 'mbcsToSbcs': dot substituted for <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : conversion failure on 'let’s' in 'mbcsToSbcs': dot substituted
+## for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : conversion failure on 'let’s' in 'mbcsToSbcs': dot substituted
+## for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : conversion failure on 'let’s' in 'mbcsToSbcs': dot substituted
+## for <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : font metrics unknown for Unicode character U+2019
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in strwidth(words[i], cex = size[i], ...): conversion failure on
+## 'don’t' in 'mbcsToSbcs': dot substituted for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in strwidth(words[i], cex = size[i], ...): conversion failure on
+## 'don’t' in 'mbcsToSbcs': dot substituted for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in strwidth(words[i], cex = size[i], ...): conversion failure on
+## 'don’t' in 'mbcsToSbcs': dot substituted for <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : conversion failure on 'don’t' in 'mbcsToSbcs': dot substituted
+## for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : conversion failure on 'don’t' in 'mbcsToSbcs': dot substituted
+## for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : conversion failure on 'don’t' in 'mbcsToSbcs': dot substituted
+## for <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in text.default(x1, y1, words[i], cex = size[i], offset = 0, srt =
+## rotWord * : font metrics unknown for Unicode character U+2019
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in wordcloud(word, n, max.words = 100): hypothesis could not be fit
+## on page. It will not be plotted.
+\end{verbatim}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-3-3.pdf}
+\#\#Chapter3
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Total word frequency calculate and plot}
+\NormalTok{total_words<-text1_11 %>%}\StringTok{ }\KeywordTok{summarize}\NormalTok{(}\DataTypeTok{total=}\KeywordTok{n}\NormalTok{())}
+\NormalTok{book_word <-}\StringTok{ }\NormalTok{text1_11 %>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(word, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{) %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{total=}\KeywordTok{rep}\NormalTok{(}\DecValTok{908}\NormalTok{,}\DecValTok{301}\NormalTok{))}
+\KeywordTok{ggplot}\NormalTok{(book_word) +}\StringTok{ }\KeywordTok{aes}\NormalTok{(n/total) +}\StringTok{ }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{bins =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-4-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Frequecy and rank of p-value}
+\NormalTok{freq_by_rank <-}\StringTok{ }\NormalTok{book_word %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{rank=}\KeywordTok{row_number}\NormalTok{(), }\DataTypeTok{frequency=}\NormalTok{n/total)}
+\KeywordTok{ggplot}\NormalTok{(freq_by_rank) +}\StringTok{ }\KeywordTok{aes}\NormalTok{(rank, frequency) +}\StringTok{ }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{size=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{alpha=}\FloatTok{0.8}\NormalTok{,}\DataTypeTok{color=}\StringTok{"red"}\NormalTok{) +}\StringTok{ }\KeywordTok{scale_x_log10}\NormalTok{() +}\StringTok{ }\KeywordTok{scale_y_log10}\NormalTok{() +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_abline}\NormalTok{(}\DataTypeTok{intercept =} \NormalTok{-}\FloatTok{1.2}\NormalTok{, }\DataTypeTok{slope =} \NormalTok{-}\FloatTok{0.7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-4-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# TF-IDF}
+\NormalTok{ds_tf_idf <-}\StringTok{ }\NormalTok{book_word %>%}\StringTok{ }\KeywordTok{bind_tf_idf}\NormalTok{(word,n,total) %>%}\StringTok{ }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(tf_idf))}
+\CommentTok{# Visualization}
+\NormalTok{ds_tf_idf %>%}\StringTok{ }\KeywordTok{top_n}\NormalTok{(}\DecValTok{15}\NormalTok{) %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{word =} \KeywordTok{reorder}\NormalTok{(word, tf_idf)) %>%}\StringTok{ }\KeywordTok{ggplot}\NormalTok{() +}\StringTok{ }\KeywordTok{aes}\NormalTok{(word, tf_idf) +}\StringTok{ }\KeywordTok{geom_col}\NormalTok{() +}\StringTok{ }\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Selecting by tf_idf
+\end{verbatim}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-4-3.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{#Compute the rank coefficient}
+\NormalTok{rank_subset <-}\StringTok{ }\NormalTok{freq_by_rank %>%}\StringTok{ }
+\StringTok{  }\KeywordTok{filter}\NormalTok{(rank <}\StringTok{ }\DecValTok{100}\NormalTok{,}
+         \NormalTok{rank >}\StringTok{ }\DecValTok{10}\NormalTok{)}
+\NormalTok{rankreg <-}\StringTok{ }\KeywordTok{lm}\NormalTok{(}\KeywordTok{log10}\NormalTok{(}\StringTok{`}\DataTypeTok{frequency}\StringTok{`}\NormalTok{) ~}\StringTok{ }\KeywordTok{log10}\NormalTok{(rank), }\DataTypeTok{data =} \NormalTok{rank_subset)}
+\NormalTok{rankreg$coef}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## (Intercept) log10(rank) 
+##  -0.7863396  -0.9258345
+\end{verbatim}
+
+\section{Chapter4}\label{chapter4}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# P-value tokenizing by 2 grams}
+\NormalTok{p_value <-}\StringTok{ }\NormalTok{text1_11 %>%}
+\StringTok{  }\KeywordTok{unnest_tokens}\NormalTok{(bigram, text, }\DataTypeTok{token =} \StringTok{"ngrams"}\NormalTok{, }\DataTypeTok{n =} \DecValTok{2}\NormalTok{)}
+\CommentTok{#4.1.1 Counting,filtering n-grams and remove stopwords}
+\NormalTok{sum_count<-p_value %>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(bigram, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{bigrams_separated <-}\StringTok{ }\NormalTok{p_value %>%}
+\StringTok{  }\KeywordTok{separate}\NormalTok{(bigram, }\KeywordTok{c}\NormalTok{(}\StringTok{"word1"}\NormalTok{, }\StringTok{"word2"}\NormalTok{), }\DataTypeTok{sep =} \StringTok{" "}\NormalTok{)}
+
+\NormalTok{p_value_bigrams_filtered <-}\StringTok{ }\NormalTok{bigrams_separated %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word1 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word2 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{   }\KeywordTok{count}\NormalTok{(word1, word2, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{unite}\NormalTok{(bigram, word1, word2, }\DataTypeTok{sep =} \StringTok{" "}\NormalTok{)}
+
+\CommentTok{# tf-idf totao=908}
+\NormalTok{ds_bigram_tf_idf <-}\StringTok{ }\NormalTok{p_value_bigrams_filtered %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{total =} \KeywordTok{rep}\NormalTok{(}\DecValTok{908}\NormalTok{, }\DecValTok{164}\NormalTok{)) %>%}\StringTok{ }\KeywordTok{bind_tf_idf}\NormalTok{(bigram,n,total)}
+\CommentTok{# Visualization}
+\NormalTok{ds_bigram_tf_idf %>%}\StringTok{ }\KeywordTok{top_n}\NormalTok{(}\DecValTok{10}\NormalTok{) %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{bigram =} \KeywordTok{reorder}\NormalTok{(bigram, tf_idf)) %>%}\StringTok{ }
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{() +}\StringTok{ }\KeywordTok{aes}\NormalTok{(bigram, tf_idf) +}\StringTok{ }\KeywordTok{geom_col}\NormalTok{() +}\StringTok{ }\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Selecting by tf_idf
+\end{verbatim}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-5-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Visualizing a network of bigrams}
+\KeywordTok{library}\NormalTok{(igraph)}
+\NormalTok{bigram_count <-}\StringTok{ }\NormalTok{p_value_bigrams_filtered  %>%}\StringTok{ }\KeywordTok{separate}\NormalTok{(bigram, }\KeywordTok{c}\NormalTok{(}\StringTok{"word1"}\NormalTok{,}\StringTok{"word2"}\NormalTok{), }\DataTypeTok{sep =} \StringTok{" "}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word1 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word2 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(word1, word2, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{bigram_graph <-}\StringTok{ }\NormalTok{bigram_count %>%}\StringTok{ }\KeywordTok{graph_from_data_frame}\NormalTok{()}
+
+\CommentTok{#gggraph}
+\KeywordTok{library}\NormalTok{(ggraph)}
+\KeywordTok{set.seed}\NormalTok{(}\DecValTok{2017}\NormalTok{)}
+\KeywordTok{ggraph}\NormalTok{(bigram_graph, }\DataTypeTok{layout =} \StringTok{"fr"}\NormalTok{) +}
+\KeywordTok{geom_edge_link}\NormalTok{() +}
+\KeywordTok{geom_node_point}\NormalTok{() +}
+\KeywordTok{geom_node_text}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{label =} \NormalTok{name), }\DataTypeTok{vjust =} \DecValTok{1}\NormalTok{, }\DataTypeTok{hjust =} \DecValTok{1}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'don’t' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'don’t' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'don’t' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'i’ve' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'i’ve' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'i’ve' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'let’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'let’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'let’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-5-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggraph)}
+\NormalTok{a <-}\StringTok{ }\NormalTok{grid::}\KeywordTok{arrow}\NormalTok{(}\DataTypeTok{type =} \StringTok{"closed"}\NormalTok{, }\DataTypeTok{length =} \KeywordTok{unit}\NormalTok{(.}\DecValTok{15}\NormalTok{, }\StringTok{"inches"}\NormalTok{))}
+\NormalTok{b<-}\KeywordTok{ggraph}\NormalTok{(bigram_graph,}\DataTypeTok{layout =} \StringTok{"fr"}\NormalTok{) +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_edge_link}\NormalTok{(}\KeywordTok{aes}\NormalTok{(), }\DataTypeTok{arrow =} \NormalTok{a, }\DataTypeTok{end_cap=}\KeywordTok{circle}\NormalTok{(.}\DecValTok{07}\NormalTok{, }\StringTok{"inches"}\NormalTok{)) +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_node_point}\NormalTok{(}\DataTypeTok{color =} \StringTok{"lightblue"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{5}\NormalTok{) +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_node_text}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{label=}\NormalTok{name),}\DataTypeTok{vjust=}\DecValTok{1}\NormalTok{,}\DataTypeTok{hjust=}\DecValTok{1}\NormalTok{) +}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{### Step 1. Load text file into R}
+\CommentTok{# "Data Science is not just about Data Science" - ds}
+\KeywordTok{library}\NormalTok{(rvest)}
+\KeywordTok{library}\NormalTok{(stringr)}
+\NormalTok{datascience <-}\StringTok{ "https://correlaid.org/blog/posts/data-science-books-to-read"}
+\NormalTok{content <-}\StringTok{ }\KeywordTok{read_html}\NormalTok{(datascience)}
+\NormalTok{ds <-}\StringTok{ }\KeywordTok{html_nodes}\NormalTok{(content,}\StringTok{"div.post-content"}\NormalTok{) %>%}\StringTok{ }\NormalTok{html_text}
+\NormalTok{ds_2 <-}\StringTok{ }\KeywordTok{str_trim}\NormalTok{(ds,}\DataTypeTok{side =} \StringTok{"both"}\NormalTok{)}
+\NormalTok{ds_3 <-}\StringTok{ }\KeywordTok{as.tibble}\NormalTok{(ds_2)}
+\KeywordTok{colnames}\NormalTok{(ds_3) <-}\StringTok{ "text"} 
+\NormalTok{ds_3[,}\StringTok{"text"}\NormalTok{]<-}\KeywordTok{gsub}\NormalTok{(}\StringTok{"}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{,}\StringTok{""}\NormalTok{,ds_3[,}\StringTok{"text"}\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\subsubsection{Step 2. Clean data}\label{step-2.-clean-data}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(tidyverse)}
+\KeywordTok{library}\NormalTok{(tidytext)}
+\CommentTok{#One token per row}
+\NormalTok{ds_tidy <-}\StringTok{ }\NormalTok{ds_3 %>%}\StringTok{ }\KeywordTok{unnest_tokens}\NormalTok{(word, text)}
+\CommentTok{# Remove stop words}
+\KeywordTok{data}\NormalTok{(stop_words)}
+\NormalTok{ds_tidy <-}\StringTok{ }\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{anti_join}\NormalTok{(stop_words)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Joining, by = "word"
+\end{verbatim}
+
+\subsubsection{Step 3. EDA}\label{step-3.-eda}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Most common words in the blog}
+\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 352 x 2
+##    word         n
+##    <chr>    <int>
+##  1 book        25
+##  2 data        20
+##  3 science     13
+##  4 books       11
+##  5 read         9
+##  6 learning     6
+##  7 list         5
+##  8 thinking     5
+##  9 change       4
+## 10 machine      4
+## # ... with 342 more rows
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Visualize the common words in the blog}
+\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{) %>%}\StringTok{ }\KeywordTok{filter}\NormalTok{(n >}\StringTok{ }\DecValTok{4}\NormalTok{) %>%}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(}\KeywordTok{aes}\NormalTok{(word,n)) +}\StringTok{ }\KeywordTok{geom_col}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-8-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Wordcloud}
+\KeywordTok{library}\NormalTok{(wordcloud)}
+\KeywordTok{library}\NormalTok{(RColorBrewer)}
+\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{) %>%}\StringTok{ }\KeywordTok{with}\NormalTok{(}\KeywordTok{wordcloud}\NormalTok{(word,n))}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-8-2.pdf}
+
+\subsubsection{Step 4. Sentiment
+Analysis}\label{step-4.-sentiment-analysis}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Using "afinn"}
+\NormalTok{ds_affin <-}\StringTok{ }\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{inner_join}\NormalTok{(}\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"afinn"}\NormalTok{)) %>%}\StringTok{ }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{sentiment =} \KeywordTok{sum}\NormalTok{(score))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Joining, by = "word"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Using "nrc"}
+\NormalTok{ds_nrc <-}\StringTok{ }\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{inner_join}\NormalTok{(}\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"nrc"}\NormalTok{)) %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word, sentiment)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Joining, by = "word"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(ds_nrc) +}\StringTok{ }\KeywordTok{aes}\NormalTok{(sentiment, n) +}\StringTok{ }\KeywordTok{geom_bar}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{fill=}\NormalTok{sentiment), }\DataTypeTok{stat =} \StringTok{"identity"}\NormalTok{) +}
+\StringTok{  }\KeywordTok{theme}\NormalTok{(}\DataTypeTok{text =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{size=}\DecValTok{14}\NormalTok{), }\DataTypeTok{axis.text.x =} \KeywordTok{element_text}\NormalTok{(}\DataTypeTok{angle =} \DecValTok{45}\NormalTok{, }\DataTypeTok{vjust =} \FloatTok{0.5}\NormalTok{)) +}
+\StringTok{  }\KeywordTok{ylab}\NormalTok{(}\StringTok{"count"}\NormalTok{) +}\StringTok{ }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Total Sentiment Scores in DS"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-9-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Using "bing"}
+\NormalTok{ds_bing <-}\StringTok{ }\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{inner_join}\NormalTok{(}\KeywordTok{get_sentiments}\NormalTok{(}\StringTok{"bing"}\NormalTok{)) %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word, sentiment, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Joining, by = "word"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{ds_bing_group <-}\StringTok{ }\NormalTok{ds_bing %>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(sentiment) %>%}\StringTok{ }\KeywordTok{top_n}\NormalTok{(}\DecValTok{5}\NormalTok{) %>%}\StringTok{ }\KeywordTok{ungroup}\NormalTok{() %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{word=}\KeywordTok{reorder}\NormalTok{(word, n))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Selecting by n
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{ggplot}\NormalTok{(ds_bing_group, }\KeywordTok{aes}\NormalTok{(word, n, }\DataTypeTok{fill=}\NormalTok{sentiment)) +}\StringTok{ }\KeywordTok{geom_col}\NormalTok{() +}\StringTok{ }\KeywordTok{facet_wrap}\NormalTok{(~sentiment, }\DataTypeTok{scales =} \StringTok{"free_y"}\NormalTok{) +}\StringTok{ }
+\StringTok{  }\KeywordTok{ggtitle}\NormalTok{(}\StringTok{"Total Sentiment score by using Bing"}\NormalTok{)  +}\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-9-2.pdf}
+
+\subsubsection{Step 5. Term Frequency and Inverse Document
+Frequency}\label{step-5.-term-frequency-and-inverse-document-frequency}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Total words}
+\NormalTok{tt_words <-}\StringTok{ }\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{) %>%}\StringTok{ }\KeywordTok{summarise}\NormalTok{(}\DataTypeTok{total=}\KeywordTok{sum}\NormalTok{(n))}
+\NormalTok{ds_words <-}\StringTok{ }\NormalTok{ds_tidy %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(word, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{) %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{total =} \KeywordTok{rep}\NormalTok{(}\DecValTok{543}\NormalTok{, }\DecValTok{352}\NormalTok{))}
+\CommentTok{# Term Frequency}
+\KeywordTok{ggplot}\NormalTok{(ds_words) +}\StringTok{ }\KeywordTok{aes}\NormalTok{(n/total) +}\StringTok{ }\KeywordTok{geom_histogram}\NormalTok{(}\DataTypeTok{bins =} \DecValTok{10}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-10-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Term Frequency and Rank}
+\NormalTok{freq_by_rank <-}\StringTok{ }\NormalTok{ds_words %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{rank=}\KeywordTok{row_number}\NormalTok{(), }\DataTypeTok{frequency=}\NormalTok{n/total)}
+\KeywordTok{ggplot}\NormalTok{(freq_by_rank) +}\StringTok{ }\KeywordTok{aes}\NormalTok{(rank, frequency) +}\StringTok{ }\KeywordTok{geom_line}\NormalTok{(}\DataTypeTok{size=}\FloatTok{1.1}\NormalTok{, }\DataTypeTok{alpha=}\FloatTok{0.8}\NormalTok{) +}\StringTok{ }\KeywordTok{scale_x_log10}\NormalTok{() +}\StringTok{ }\KeywordTok{scale_y_log10}\NormalTok{() +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_abline}\NormalTok{(}\DataTypeTok{intercept =} \NormalTok{-}\FloatTok{1.2}\NormalTok{, }\DataTypeTok{slope =} \NormalTok{-}\FloatTok{0.7}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-10-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# TF-IDF}
+\NormalTok{ds_tf_idf <-}\StringTok{ }\NormalTok{ds_words %>%}\StringTok{ }\KeywordTok{bind_tf_idf}\NormalTok{(word,n,total) %>%}\StringTok{ }\KeywordTok{arrange}\NormalTok{(}\KeywordTok{desc}\NormalTok{(tf_idf))}
+\CommentTok{# Visualization}
+\NormalTok{ds_tf_idf %>%}\StringTok{ }\KeywordTok{top_n}\NormalTok{(}\DecValTok{15}\NormalTok{) %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{word =} \KeywordTok{reorder}\NormalTok{(word, tf_idf)) %>%}\StringTok{ }\KeywordTok{ggplot}\NormalTok{() +}\StringTok{ }\KeywordTok{aes}\NormalTok{(word, tf_idf) +}\StringTok{ }\KeywordTok{geom_col}\NormalTok{() +}\StringTok{ }\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Selecting by tf_idf
+\end{verbatim}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-10-3.pdf}
+
+\subsubsection{Step 6. n-grams and
+correlations}\label{step-6.-n-grams-and-correlations}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Tokenizing by 2 grams}
+\NormalTok{ds_bigrams <-}\StringTok{ }\NormalTok{ds_3 %>%}\StringTok{ }\KeywordTok{unnest_tokens}\NormalTok{(bigram, text, }\DataTypeTok{token =} \StringTok{"ngrams"}\NormalTok{, }\DataTypeTok{n=}\DecValTok{2}\NormalTok{)}
+\CommentTok{# Summarize}
+\NormalTok{sum_count <-}\StringTok{ }\NormalTok{ds_bigrams %>%}\StringTok{ }\KeywordTok{count}\NormalTok{(bigram, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{)}
+\CommentTok{# Remove stop words}
+\NormalTok{ds_bigrams_tidy <-}\StringTok{ }\NormalTok{ds_bigrams %>%}\StringTok{ }\KeywordTok{separate}\NormalTok{(bigram, }\KeywordTok{c}\NormalTok{(}\StringTok{"word1"}\NormalTok{,}\StringTok{"word2"}\NormalTok{), }\DataTypeTok{sep =} \StringTok{" "}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word1 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word2 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(word1, word2, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{unite}\NormalTok{(bigram, word1, word2, }\DataTypeTok{sep =} \StringTok{" "}\NormalTok{)}
+\CommentTok{# tf-idf totao=181}
+\NormalTok{ds_bigram_tf_idf <-}\StringTok{ }\NormalTok{ds_bigrams_tidy %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{total =} \KeywordTok{rep}\NormalTok{(}\DecValTok{181}\NormalTok{, }\DecValTok{162}\NormalTok{)) %>%}\StringTok{ }\KeywordTok{bind_tf_idf}\NormalTok{(bigram,n,total)}
+\CommentTok{# Visualization}
+\NormalTok{ds_bigram_tf_idf %>%}\StringTok{ }\KeywordTok{top_n}\NormalTok{(}\DecValTok{10}\NormalTok{) %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{bigram =} \KeywordTok{reorder}\NormalTok{(bigram, tf_idf)) %>%}\StringTok{ }
+\StringTok{  }\KeywordTok{ggplot}\NormalTok{() +}\StringTok{ }\KeywordTok{aes}\NormalTok{(bigram, tf_idf) +}\StringTok{ }\KeywordTok{geom_col}\NormalTok{() +}\StringTok{ }\KeywordTok{coord_flip}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Selecting by tf_idf
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call(C_textBounds, as.graphicsAnnot(x$label), x$x, x$y, :
+## conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot
+## substituted for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot
+## substituted for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'steffen mau’s' in 'mbcsToSbcs': dot
+## substituted for <99>
+\end{verbatim}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-11-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# Visualizing a network of bigrams}
+\KeywordTok{library}\NormalTok{(igraph)}
+\NormalTok{bigram_count <-}\StringTok{ }\NormalTok{ds_bigrams_tidy <-}\StringTok{ }\NormalTok{ds_bigrams %>%}\StringTok{ }\KeywordTok{separate}\NormalTok{(bigram, }\KeywordTok{c}\NormalTok{(}\StringTok{"word1"}\NormalTok{,}\StringTok{"word2"}\NormalTok{), }\DataTypeTok{sep =} \StringTok{" "}\NormalTok{) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word1 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word2 %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}
+\StringTok{  }\KeywordTok{count}\NormalTok{(word1, word2, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{)}
+\NormalTok{bigram_graph <-}\StringTok{ }\NormalTok{bigram_count %>%}\StringTok{ }\KeywordTok{graph_from_data_frame}\NormalTok{()}
+\KeywordTok{library}\NormalTok{(ggraph)}
+\NormalTok{a <-}\StringTok{ }\NormalTok{grid::}\KeywordTok{arrow}\NormalTok{(}\DataTypeTok{type =} \StringTok{"closed"}\NormalTok{, }\DataTypeTok{length =} \KeywordTok{unit}\NormalTok{(.}\DecValTok{15}\NormalTok{, }\StringTok{"inches"}\NormalTok{))}
+\KeywordTok{ggraph}\NormalTok{(bigram_graph,}\DataTypeTok{layout =} \StringTok{"fr"}\NormalTok{) +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_edge_link}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{edge_alpha=}\NormalTok{n), }\DataTypeTok{arrow =} \NormalTok{a, }\DataTypeTok{end_cap=}\KeywordTok{circle}\NormalTok{(.}\DecValTok{07}\NormalTok{, }\StringTok{"inches"}\NormalTok{)) +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_node_point}\NormalTok{(}\DataTypeTok{color =} \StringTok{"lightblue"}\NormalTok{, }\DataTypeTok{size =} \DecValTok{5}\NormalTok{) +}\StringTok{ }
+\StringTok{  }\KeywordTok{geom_node_text}\NormalTok{(}\KeywordTok{aes}\NormalTok{(}\DataTypeTok{label=}\NormalTok{name),}\DataTypeTok{vjust=}\DecValTok{1}\NormalTok{,}\DataTypeTok{hjust=}\DecValTok{1}\NormalTok{) +}
+\StringTok{  }\KeywordTok{theme_void}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'aren’t' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'aren’t' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'aren’t' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'didn’t' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'didn’t' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'didn’t' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'mau’s' in 'mbcsToSbcs': dot substituted for
+## <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'mau’s' in 'mbcsToSbcs': dot substituted for
+## <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'mau’s' in 'mbcsToSbcs': dot substituted for
+## <99>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'lanier’s' in 'mbcsToSbcs': dot substituted
+## for <e2>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'lanier’s' in 'mbcsToSbcs': dot substituted
+## for <80>
+\end{verbatim}
+
+\begin{verbatim}
+## Warning in grid.Call.graphics(C_text, as.graphicsAnnot(x$label), x$x,
+## x$y, : conversion failure on 'lanier’s' in 'mbcsToSbcs': dot substituted
+## for <99>
+\end{verbatim}
+
+\includegraphics{615_for_text_ming_files/figure-latex/unnamed-chunk-11-2.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{# correlation and pairs}
+\KeywordTok{library}\NormalTok{(widyr)}
+\NormalTok{word_pairs <-}\StringTok{ }\NormalTok{ds_3 %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{section=}\KeywordTok{row_number}\NormalTok{() %/%}\StringTok{ }\DecValTok{10}\NormalTok{) %>%}\StringTok{ }\KeywordTok{unnest_tokens}\NormalTok{(word, text) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}\StringTok{ }\KeywordTok{pairwise_count}\NormalTok{(word, section, }\DataTypeTok{sort=}\OtherTok{TRUE}\NormalTok{)}
+\NormalTok{word_cors <-}\StringTok{ }\NormalTok{ds_3 %>%}\StringTok{ }\KeywordTok{mutate}\NormalTok{(}\DataTypeTok{section=}\KeywordTok{row_number}\NormalTok{()) %>%}\StringTok{ }\KeywordTok{unnest_tokens}\NormalTok{(word, text) %>%}
+\StringTok{  }\KeywordTok{filter}\NormalTok{(!word %in%}\StringTok{ }\NormalTok{stop_words$word) %>%}\StringTok{ }\KeywordTok{group_by}\NormalTok{(word) %>%}\StringTok{ }
+\StringTok{  }\KeywordTok{pairwise_cor}\NormalTok{(word,section, }\DataTypeTok{sort =} \OtherTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+```
+
+Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
+chunk to prevent printing of the R code that generated the plot.
+
+
+\end{document}

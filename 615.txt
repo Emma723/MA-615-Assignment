@@ -1,0 +1,256 @@
+ 
+<!DOCTYPE html>
+<html lang="de">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <meta name="description" content="The other day I went through the list of books I have read over the last half a year. And I noticed that most popular science books on that list were somewhat related to data science – in one way or[...]">
+    <meta name="keywords" content="Data Science, book review, popular science, big data, nate silver, psychology">
+    <meta name="author" content="CorrelAid e.V.">
+
+    <meta property="og:title" content="CorrelAid. - Data Science is not just about Data Science"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:image" content="https://correlaid.org/media/img/thumbnails/buecher2.jpg"/>
+    <meta property="og:url" content="https://correlaid.org/blog/posts/data-science-books-to-read"/>
+    <meta property="og:description" content="The other day I went through the list of books I have read over the last half a year. And I noticed that most popular science books on that list were somewhat related to data science – in one way or[...]"/>
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@CorrelAid" />
+    <meta name="twitter:title" content="CorrelAid. - Data Science is not just about Data Science" />
+    <meta name="twitter:description" content="The other day I went through the list of books I have read over the last half a year. And I noticed that most popular science books on that list were somewhat related to data science – in one way or[...]" />
+    <meta name="twitter:image" content="https://correlaid.org/media/img/thumbnails/buecher2.jpg" />
+
+
+    <title>CorrelAid. - Data Science is not just about Data Science</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="https://correlaid.org/application/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Theme CSS -->
+    <link href="https://correlaid.org/application/css/freelancer.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="https://correlaid.org/application/vendor/flag-icon/css/flag-icon.min.css" rel="stylesheet" type="text/css">
+    <link href="https://correlaid.org/application/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- Favicon settings -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=YAo8QymJao">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png?v=YAo8QymJao">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png?v=YAo8QymJao">
+	<link rel="manifest" href="/site.webmanifest?v=YAo8QymJao">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg?v=YAo8QymJao" color="#3863a2">
+	<link rel="shortcut icon" href="/favicon.ico?v=YAo8QymJao">
+	<meta name="msapplication-TileColor" content="#3863a2">
+	<meta name="theme-color" content="#3863a2">
+
+
+
+    <!-- jQuery -->
+    <script src="https://correlaid.org/application/vendor/jquery/jquery.js"></script>
+	
+</head>
+
+<body id="page-top" class="index">
+
+
+<div id="skipnav"><a href="#maincontent">Skip to main content</a></div>
+
+
+    <!-- Navigation -->
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+            
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="hidden">
+                            <a href="#page-top"></a>
+                        </li>
+                        <li>
+                            <a href="https://correlaid.org/"><i class="fa fa-angle-double-left"></i> Zurück zu Correlaid.org</a>
+                        </li>
+                        <li>
+                            <a href="https://correlaid.org/blog/">Blog</a>
+                        </li>
+                    </ul>
+                </div>
+
+            
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+
+
+<!-- Theme CSS -->
+<link href="https://correlaid.org/application/vendor/prism/prism.css" rel="stylesheet">
+
+<!-- Header -->
+<header id="small-header" style="background-image: url('https://correlaid.org/media/img/posts/buecher2.jpg'">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 blog-head">
+                <h2>Data Science is not just about Data Science</h2>
+                <hr class="star-light"/>
+                <h3 class="subheading">7 Popular Science Books that you have to read</h3>
+                <p>Written by Johannes on 01 May, 2018</p>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Portfolio Grid Section -->
+<section id="blog" class="one-page-template">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div id="share-section">
+                    <h5>Share On:</h5>
+                    <h1>
+                        <a target="_blank" href="https://twitter.com/share?url=https://correlaid.org/blog/posts/data-science-books-to-read&via=CorrelAid&hashtags=WeAreCorrelAid"><i class="fa fa-lg fa-twitter-square"></i></a>
+                        <a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://correlaid.org/blog/posts/data-science-books-to-read" ><i class="fa fa-lg fa-facebook-square"></i></a>
+                    </h1>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12 col-sm-10 col-sm-offset-1 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                <div class="post-content">
+                <p>The other day I went through the list of books I have read over the last half a year. And I noticed that most popular science books on that list were somewhat related to data science – in one way or the other. I found it fascinating how many different subjects and areas are related to what we do every day as data analysts and scientists. Therefore, I want to take the opportunity and quickly review some of the books, give my opinion on why those books matter for us as data analysts, and maybe give you some inspiration about what to read next.</p>
+<p><h3>1. The psychological aspect of data science</h3></p>
+<p>I start with two books that are originally from the field of psychology and economics. The authors of both books have won the Nobel prize for economics and both have in common that they change the way we think about statistics and data.</p>
+<p><b>Daniel Kahneman's “Thinking, fast and slow”</b> is a modern classic. He gives a broad overview of his research into how people reason, judge and make decisions. By now, many have heard of the two different modes of thinking: “system 1”, which is instinctive and fast and “system 2” which is slower and more rational. It is fascinating, probably any of the other books in this list refers to Kahneman in some way or another. That just shows how influential his ideas and this book is. For me the book is essential in a data science curriculum in two ways: Firstly, a lot of data is generated by humans and it is, therefore, important to understand how some of the data is generated and what biases could be within. Secondly, the book reflects on how we think about statistics. Kahneman claims that statistical thinking is not natural to most people – not even statisticians. This is a good reminder to be careful when communicating results.</p>
+<p>The second book <b>“Nudge – Improving Decisions About Health, Wealth, and Happiness” by Richard Thaler</b> is about behavioral economics. The goal of nudging is to change the behavior of people without imposing explicit restrictions or bans. The concept has become rather influential in different areas of marketing to health promotion. In Germany, the concept is very controversial, and most commentators criticise it as paternalistic. The authors themselves call nudging a form of “libertarian paternalism”. I found the book really interesting for another reason: Data Science gives us the opportunity to understand the effects of the choice architecture in so many parts of life. This can be used for good or for bad, but the potential damage of thinking about choice architecture and designing them deliberately are smaller than not thinking about it all. </p>
+<p><h3>2. The societal aspect of data science</h3></p>
+<p>This brings me to the second batch of books I have read about the relationship between digitalization, big data, and society. </p>
+<p>I started with <b>Jaron Lanier’s “Who owns the future”</b>. Even though it is already a couple of years old, it is still a valuable reflection of the relationship between emergent technologies and our economies. His main argument is that the platform economy is disenfranchising the middle class. Platform services are built on our data and we are giving it to them for free (more or less). At the end of the book, he proposes some kind of micro-payment system which he believes could fix the system. I enjoyed reading the book, especially because it looks at the emergence of tech companies and their business models not only in technological terms but foremost as a macroeconomic challenge. I think it is crucial that we move beyond this fixation on the technical aspects to a more holistic understanding of how our societies change in the age of digitalization. </p>
+<p>A book that does this even more so is <b>Thomas L. Friedman’s “Thank you for being late – An optimists guide to thriving in the age of accelerations”</b>. Friedman takes on a truly holistic perspective. If you want to know what GitHub and MapReduce have to do with the Syrian refugee crisis and climate change, this book is for you! Friedman describes several recent developments, connects them and puts them into perspective. This book was probably the clearest account of how big data is reshaping our economies and societies. What I particularly like is that Friedman ends his book with actual, pragmatic policy proposals (and not some idealistic but far-fetched ideas like Jaron Lanier). </p>
+<p>A book taking a completely different and very critical perspective is <b>Steffen Mau’s “Das metrisch Wir – Die Quantifizierung des Sozialen”</b> (The metric society). Steffen Mau is a professor for macro-sociology in Berlin and his book is a harsh criticism of recent trends in “quantifying everything” – what he calls sociometrics. He discusses rankings, votes, and recommendation systems against the backdrop of the implicit sociological effects and epistemological foundations. The book is by far the most critical and pessimistic book I have read (which was actually the reason I wanted to read it in the first place), but it didn’t offer too many new insights. The examples were discussed extremely one-sided and most of the topics were covered at great length before: Do we really need another book explaining that Facebook’s “Like Button” is eroding our social interactions? And aren’t measurement problems in surveys discussed in social science literature for decades? On the meta-level Mau sees the quantification of everything as an expression of our new neo-liberal society. This criticism is valid without a doubt – but reading a book by Colin Crouch is probably more fruitful in that domain. </p>
+<p><h3>3. The epistemological aspect of data science </h3></p>
+<p>This brings me to the last two books. Both are more directly related to data science. </p>
+<p>The first one is <b>The Signal and the Noise - Why So Many Predictions Fail-but Some Don't</b> by <b>Nate Silver</b>. It is a beautiful introduction to the art and science of prediction – one of the key goals of data science. Nate Silver, who is most popular for his blog fivethirtyeight.com has such a deep knowledge and enthusiasm for scientific predictions which he conveys in a clear and inspiring way while being agnostic about the limitations and problems. Silver also reflects on the epistemological foundation of statistical forecasting and predictions. The second half of the book is a great introduction to the Bayesian epistemology. I loved the book so much that I read it twice, and it then inspired me to do a TED Talk about that matter (find the Talk <a href=" https://www.youtube.com/watch?v=pG6sE_oE488&t=2s" target="_blank">here</a>). <i>Must read!</i> </p>
+<p>The last book I read was <b>Pedro Domingos’ The Master Algorithm - How the Quest for the Ultimate Learning Machine Will Remake Our World</b>. Bill Gates called it “one the most important book about machine learning”, so I bought it. It was indeed a very different introduction to machine learning. Domingos introduces the different epistemic communities and thought processes behind different kind of machine learning techniques. I was rather surprised to learn that decision trees, support vector machines, deep neural networks and Bayesian learning techniques were quite separate in the communities that developed them over the last decades and that the philosophical ideas about “learning” and the world, in general, are very different. That was the good part of the book. In the end, Domingos explains his quest to combine all different learners to create what he calls “the master algorithm”. While Steffen Mau’s book was too negative and too pessimistic, this book is probably too optimistic and uncritical of the developments in AI.</p>
+<p><h3>Wrap-Up:</h3></p>
+<p>I hope you made it to the end of the list! And I hope you found something interesting and new on this list. Data Science is not just about data science. I think it is crucial that we as data enthusiasts keep in mind that what we do transcends just “working with data”. On the other side, it is more important than ever to communicate what we do – for example by writing popular science books. 
+Have you read some of the books and have a different opinion? Was there a book you really enjoyed reading about data science? And where are all the female authors writing about this topic? If you have any suggestions, please let me know on Twitter <a href="https://twitter.com/jj_mllr" target="_blank">@jj_mllr</a>.</p>
+ 
+
+
+
+                <hr />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-lg-2"></div>
+            <div class="col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3 col-md-3 col-md-offset-0 col-lg-2 col-lg-offset-0">
+                <img class="img-responsive author-img" src="https://correlaid.org/media/img/authors/johannes.jpg">
+                <h4 class="contact-icon"><a href="mailto:johannes.m@correlaid.org" target = "_blank"><i class="fa fa-2x fa-envelope-square"></i></a></h4> <h4 class="contact-icon"><a href="https://twitter.com/jj_mllr" target = "_blank"><i class="fa fa-2x fa-twitter-square"></i></a></h4>            </div>
+            <div class="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-7 col-md-offset-0 col-lg-6 col-lg-offset-0">
+                <div class="author-text"><h3>Johannes</h3><p>Johannes hatte 2015 die Idee für CorrelAid und ist seitdem unser Vorstandsvorsitzender. 
+
+Er studiert im Master "Evidence-based Policymaking" an der University of Oxford und Policy-Analyse an der Universität Konstanz. 
+
+Er interessiert sich vor allem für Evaluierungsmethoden, die Nutzung von Evidenz und Daten in Gesellschaft und Politik, und Social Entrepreneurship.</p></div>            </div>
+            <div class="col-md-1 col-lg-2"></div>
+        </div>
+    </div>
+</section>
+<!-- Footer -->
+<section id="partner">
+    <div class="container">
+        <div class="row">
+                        <div class="col-xs-8 col-xs-offset-2 col-sm-8 col-sm-offset-2 col-md-4 col-md-offset-4 col-lg-6 col-lg-offset-3">
+                <h5>Unsere Partner:</h5>
+            </div>
+                    </div>
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-2 text-center"><a href="https://startsocial.de/" target="_blank"><img class="img-responsive img-centered partner-logo" src="https://correlaid.org/media/img/start-social.png"></a></div>
+            <div class="col-lg-2 text-center"><a href="https://www.think-big.org/" target="_blank"><img class="img-responsive img-centered partner-logo" src="https://correlaid.org/media/img/think-big.png"></a></div>
+            <div class="col-lg-2 text-center"><a href="http://changemakerxchange.com/" target="_blank"><img class="img-responsive img-centered partner-logo" src="https://correlaid.org/media/img/changemaker.png"></a></div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+</section>
+
+<footer class="text-center">
+    <div class="footer-below">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <ul class="list-inline">
+                        <li>
+                            <a href="https://www.facebook.com/WeAreCorrelAid" class="btn-social btn-outline" target="_blank"><span class="sr-only">Facebook</span><i class="fa fa-fw fa-facebook"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.twitter.com/correlaid" class="btn-social btn-outline" target="_blank"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-twitter"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.youtube.com/channel/UC59n41SakYfllEU6tqg5yLA" class="btn-social btn-outline" target="_blank"><span class="sr-only">Twitter</span><i class="fa fa-fw fa-youtube"></i></a>
+                        </li>
+                    </ul>
+                    <hr class="star-footer"/>
+                    <p class="small">Copyright <i class="fa fa-copyright"></i> CorrelAid 2018</p>
+
+                   <p>
+                       <a href="https://correlaid.org/de/cookies">Cookie Policy</a> &middot; <a href="https://correlaid.org/de/impressum">Impressum</a> &middot; <a href="https://correlaid.org/de/impressum#privacy">Data Privacy</a> &middot; <a href="https://correlaid.org/sitemap">Sitemap</a>
+                   </p>
+
+                    <p class="small">Pixelated by <a href="https://twitter.com/toll_patsch" target="_blank">@toll_patsch <i class="fa fa-paper-plane-o"></i></a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
+<div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
+    <a class="btn btn-primary" href="#page-top">
+        <i class="fa fa-chevron-up"></i>
+    </a>
+</div>
+
+<!-- Modal -->
+
+    <div class="cookie-bar">
+        <h4>Wir benutzen Cookies für ein besseres Nutzererlebnis. <a href="https://correlaid.org/de/cookies">Mehr Informationen</a>.</h4>
+        <p id="cookie-bar-close"><i class="fa fa-times-circle-o"></i></p>
+    </div>
+
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://correlaid.org/application/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Plugin JavaScript -->
+<script src="https://correlaid.org/application/vendor/jquery/jquery.easing.min.js"></script>
+
+<!-- Theme JavaScript -->
+<script src="https://correlaid.org//application/js/freelancer.js"></script>
+
+<!-- Hide pop-up -->
+<script src="https://correlaid.org/application/js/pop-up.js"></script>
+
+<!-- Clipboard JavaScript -->
+<script src="https://correlaid.org/application/vendor/prism/clipboard.min.js"></script>
+
+<!-- Prism JavaScript -->
+<script src="https://correlaid.org/application/vendor/prism/prism.min.js"></script>
+
+</body>
+
+</html>
